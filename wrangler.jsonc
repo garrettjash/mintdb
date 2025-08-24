@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "mintdb",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "mintdb",
+          "database_id": "007592c8-6ff6-4965-90ef-55d44563c806"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "c36250a90f8b43eeaceb2057caeb3b8b",
+            "binding": "SECRET",
+            "secret_name": "mintsecret"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
